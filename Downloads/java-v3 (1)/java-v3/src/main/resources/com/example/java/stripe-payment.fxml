@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+
+<!--
+  Fenêtre de paiement Stripe embarquée dans l'application.
+  Charge la page Stripe dans un WebView JavaFX.
+  Détecte automatiquement la confirmation de paiement.
+-->
+<VBox spacing="0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.java.controllers.StripeWebViewController"
+      prefWidth="720" prefHeight="640"
+      style="-fx-background-color:#f5f3ef;">
+
+    <!-- ── Header ARTERA ── -->
+    <HBox alignment="CENTER_LEFT" spacing="16"
+          style="-fx-background-color:#2c2218; -fx-padding:14 24 14 24;">
+        <Label text="ARTERA" style="-fx-font-size:18px; -fx-font-weight:bold;
+                                    -fx-text-fill:white; -fx-letter-spacing:2px;"/>
+        <Label text="·" style="-fx-text-fill:rgba(255,255,255,0.4); -fx-font-size:18px;"/>
+        <Label text="Paiement sécurisé" style="-fx-font-size:13px;
+                                               -fx-text-fill:rgba(255,255,255,0.75);"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="🔒 Stripe" style="-fx-font-size:12px; -fx-text-fill:rgba(255,255,255,0.55);"/>
+    </HBox>
+
+    <!-- ── Barre de progression / URL ── -->
+    <HBox alignment="CENTER_LEFT" spacing="10"
+          style="-fx-background-color:#3d3330; -fx-padding:6 16 6 16;">
+        <Label fx:id="lblUrl"
+               text="Chargement de la page Stripe…"
+               style="-fx-font-size:11px; -fx-text-fill:rgba(255,255,255,0.5);
+                      -fx-max-width:540; -fx-text-overrun:ELLIPSIS;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <ProgressIndicator fx:id="progressIndicator"
+                           prefWidth="18" prefHeight="18" visible="true"
+                           style="-fx-progress-color:rgba(255,255,255,0.6);"/>
+    </HBox>
+
+    <!-- ── WebView (page Stripe) ── -->
+    <WebView fx:id="webView" VBox.vgrow="ALWAYS"/>
+
+    <!-- ── Bannière de succès (masquée au départ) ── -->
+    <HBox fx:id="successBanner" alignment="CENTER" spacing="12"
+          style="-fx-background-color:#2d6a4f; -fx-padding:12 24 12 24;"
+          visible="false" managed="false">
+        <Label text="✅  Paiement détecté !"
+               style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:white;"/>
+        <Label text="La commande va être confirmée automatiquement…"
+               style="-fx-font-size:12px; -fx-text-fill:rgba(255,255,255,0.8);"/>
+    </HBox>
+
+    <!-- ── Barre d'actions ── -->
+    <HBox spacing="12" alignment="CENTER"
+          style="-fx-background-color:white; -fx-border-color:#e8e4dc; -fx-border-width:1 0 0 0;
+                 -fx-padding:14 24 14 24;">
+
+        <Label fx:id="lblStatus" text="Complétez votre paiement sur la page Stripe."
+               style="-fx-font-size:12px; -fx-text-fill:#7a6a5a;"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Button fx:id="btnCancel"
+                text="❌  Annuler"
+                onAction="#handleCancel"
+                prefHeight="40" prefWidth="130"
+                style="-fx-background-color:transparent; -fx-border-color:#d4cfc7;
+                       -fx-border-width:1; -fx-border-radius:8; -fx-background-radius:8;
+                       -fx-text-fill:#6b4f3a; -fx-font-size:13px; -fx-cursor:hand;"/>
+
+        <Button fx:id="btnConfirm"
+                text="✅  Paiement effectué"
+                onAction="#handleConfirm"
+                prefHeight="40" prefWidth="180"
+                style="-fx-background-color:#2d6a4f; -fx-text-fill:white;
+                       -fx-font-size:13px; -fx-font-weight:bold;
+                       -fx-border-radius:8; -fx-background-radius:8; -fx-cursor:hand;"/>
+    </HBox>
+
+</VBox>

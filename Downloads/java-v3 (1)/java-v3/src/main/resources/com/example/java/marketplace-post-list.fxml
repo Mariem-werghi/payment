@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="0" styleClass="bo-content"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.java.controllers.MarketplacePostController">
+
+    <!-- ── Barre d'actions (Ajouter supprimé → côté User seulement) ── -->
+    <HBox styleClass="bo-topbar" alignment="CENTER_LEFT" spacing="12">
+        <VBox HBox.hgrow="ALWAYS" spacing="2">
+            <Label text="Modération des publications" styleClass="bo-page-title"/>
+            <Label text="Les publications sont créées par les vendeurs (côté utilisateur)"
+                   style="-fx-font-size:11px; -fx-text-fill:#9a8a7a;"/>
+        </VBox>
+        <Button text="✏️  Modifier"   onAction="#handleModifier"  styleClass="bo-edit-btn"/>
+        <Button text="🗑️  Supprimer"  onAction="#handleSupprimer" styleClass="bo-delete-btn"/>
+        <Button text="🔄  Actualiser" onAction="#chargerDonnees"  styleClass="bo-edit-btn"/>
+    </HBox>
+
+    <!-- ── Grille de cartes ── -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="bo-content-scroll">
+        <VBox fx:id="cardContainer" spacing="12" styleClass="bo-content">
+            <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+        </VBox>
+    </ScrollPane>
+
+</VBox>

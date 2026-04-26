@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  Formulaire "Publier une œuvre" — côté utilisateur (front).
+  Seuls les champs pertinents pour un vendeur sont exposés.
+  sellerId et status sont remplis automatiquement.
+-->
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.java.controllers.MarketplaceSellController"
+            style="-fx-background: #f5f3ef; -fx-background-color: #f5f3ef;">
+
+    <VBox spacing="0" alignment="TOP_CENTER">
+        <padding><Insets top="40" right="60" bottom="60" left="60"/></padding>
+
+        <!-- ── Titre ── -->
+        <VBox spacing="6" alignment="CENTER">
+            <Label text="🎨  Publier une œuvre"
+                   style="-fx-font-size:26px; -fx-font-weight:bold;
+                          -fx-text-fill:#2c2218; -fx-font-family:'Georgia, serif';"/>
+            <Label text="Mettez votre création en vente sur la marketplace ARTERA"
+                   style="-fx-font-size:13px; -fx-text-fill:#7a6a5a;"/>
+        </VBox>
+
+        <Region prefHeight="32"/>
+
+        <!-- ── Formulaire Card ── -->
+        <VBox spacing="22" maxWidth="520"
+              style="-fx-background-color:white;
+                     -fx-border-color:#d4cfc7; -fx-border-width:1;
+                     -fx-border-radius:14; -fx-background-radius:14;
+                     -fx-effect:dropshadow(gaussian,rgba(74,55,40,0.08),12,0,0,4);">
+            <padding><Insets top="36" right="40" bottom="36" left="40"/></padding>
+
+            <!-- Type de produit -->
+            <VBox spacing="6">
+                <Label text="Type d'œuvre  *"
+                       style="-fx-font-size:12px; -fx-font-weight:bold; -fx-text-fill:#4a3728;"/>
+                <ComboBox fx:id="cbProductType" maxWidth="Infinity"
+                          style="-fx-background-color:#fdf9f5; -fx-border-color:#d4cfc7;
+                                 -fx-border-radius:8; -fx-background-radius:8;
+                                 -fx-font-size:13px; -fx-padding:6 12 6 12;"/>
+            </VBox>
+
+            <!-- Prix -->
+            <VBox spacing="6">
+                <Label text="Prix de vente (€)  *"
+                       style="-fx-font-size:12px; -fx-font-weight:bold; -fx-text-fill:#4a3728;"/>
+                <TextField fx:id="tfPrice" promptText="Ex : 250.00"
+                           style="-fx-background-color:#fdf9f5; -fx-border-color:#d4cfc7;
+                                  -fx-border-radius:8; -fx-background-radius:8;
+                                  -fx-font-size:13px; -fx-padding:10 14 10 14;"/>
+            </VBox>
+
+            <!-- Quantité disponible -->
+            <VBox spacing="6">
+                <Label text="Quantité disponible  *"
+                       style="-fx-font-size:12px; -fx-font-weight:bold; -fx-text-fill:#4a3728;"/>
+                <TextField fx:id="tfAvailableQty" promptText="Ex : 5"
+                           style="-fx-background-color:#fdf9f5; -fx-border-color:#d4cfc7;
+                                  -fx-border-radius:8; -fx-background-radius:8;
+                                  -fx-font-size:13px; -fx-padding:10 14 10 14;"/>
+                <CheckBox fx:id="chkUnlimited" text="Stock illimité (reproductions numériques, prints…)"
+                          style="-fx-font-size:12px; -fx-text-fill:#7a6a5a;"/>
+                <Label fx:id="lblQtyNote" text="ℹ  Stock illimité activé — quantité ignorée"
+                       style="-fx-font-size:11px; -fx-text-fill:#2d6a4f;" visible="false"/>
+            </VBox>
+
+            <!-- Artwork ID -->
+            <VBox spacing="6">
+                <Label text="ID de l'œuvre (Artwork ID)  *"
+                       style="-fx-font-size:12px; -fx-font-weight:bold; -fx-text-fill:#4a3728;"/>
+                <TextField fx:id="tfArtworkId" promptText="Ex : 42"
+                           style="-fx-background-color:#fdf9f5; -fx-border-color:#d4cfc7;
+                                  -fx-border-radius:8; -fx-background-radius:8;
+                                  -fx-font-size:13px; -fx-padding:10 14 10 14;"/>
+                <Label text="Identifiant de l'œuvre dans votre galerie"
+                       style="-fx-font-size:11px; -fx-text-fill:#9a8a7a;"/>
+            </VBox>
+
+            <!-- Info auto-rempli -->
+            <HBox spacing="10" alignment="CENTER_LEFT"
+                  style="-fx-background-color:#f0f9f4; -fx-border-color:#b7e4c7;
+                         -fx-border-radius:8; -fx-background-radius:8; -fx-padding:12 16 12 16;">
+                <Label text="ℹ" style="-fx-font-size:16px; -fx-text-fill:#2d6a4f;"/>
+                <VBox spacing="2">
+                    <Label text="Statut : Actif immédiatement après publication"
+                           style="-fx-font-size:11px; -fx-text-fill:#2d6a4f;"/>
+                    <Label text="Vendeur : votre compte (ID #1)"
+                           style="-fx-font-size:11px; -fx-text-fill:#2d6a4f;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Message résultat -->
+            <VBox fx:id="resultBox" spacing="4"
+                  style="-fx-background-color:#f0f9f4; -fx-border-radius:8; -fx-background-radius:8;
+                         -fx-padding:12 16 12 16;">
+                <Label fx:id="lblResult" text="" wrapText="true"
+                       style="-fx-font-size:13px;"/>
+            </VBox>
+
+            <!-- Boutons -->
+            <HBox spacing="12" alignment="CENTER">
+                <Button fx:id="btnPublish"
+                        text="🚀  Publier l'œuvre"
+                        onAction="#handlePublish"
+                        prefHeight="46" prefWidth="200"
+                        style="-fx-background-color:#4a3728; -fx-text-fill:white;
+                               -fx-font-size:14px; -fx-font-weight:bold;
+                               -fx-border-radius:10; -fx-background-radius:10; -fx-cursor:hand;"/>
+
+                <Button fx:id="btnReset"
+                        text="🔄  Réinitialiser"
+                        onAction="#handleReset"
+                        prefHeight="46" prefWidth="150"
+                        style="-fx-background-color:transparent; -fx-border-color:#d4cfc7;
+                               -fx-border-width:1; -fx-text-fill:#6b4f3a;
+                               -fx-font-size:13px; -fx-border-radius:10;
+                               -fx-background-radius:10; -fx-cursor:hand;"/>
+            </HBox>
+
+            <Button text="← Retour à la marketplace"
+                    onAction="#handleRetourMarket"
+                    prefHeight="38"
+                    style="-fx-background-color:transparent; -fx-text-fill:#9a8a7a;
+                           -fx-font-size:12px; -fx-cursor:hand; -fx-underline:true;"/>
+
+        </VBox>
+
+    </VBox>
+</ScrollPane>

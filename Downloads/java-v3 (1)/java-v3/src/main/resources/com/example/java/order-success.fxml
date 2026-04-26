@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  Écran de confirmation après commande (checkout success).
+  Réplique Symfony : page success après validation du panier.
+  Affiche le récapitulatif de la commande et permet de télécharger le PDF.
+-->
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.java.controllers.OrderSuccessController"
+            styleClass="u-success-scroll">
+
+    <VBox spacing="0" alignment="TOP_CENTER">
+        <padding><Insets top="60" right="60" bottom="60" left="60"/></padding>
+
+        <!-- ── Icône succès ── -->
+        <VBox alignment="CENTER" spacing="12">
+            <Label text="✅" style="-fx-font-size:64px;"/>
+            <Label text="Commande confirmée !"
+                   style="-fx-font-size:28px; -fx-font-weight:bold;
+                          -fx-text-fill:#2d6a4f; -fx-font-family:'Georgia, serif';"/>
+            <Label text="Votre commande a été enregistrée. Un email de confirmation vous a été envoyé."
+                   style="-fx-font-size:14px; -fx-text-fill:#7a6a5a;" wrapText="true" textAlignment="CENTER"/>
+        </VBox>
+
+        <Region prefHeight="36"/>
+
+        <!-- ── Carte de récapitulatif ── -->
+        <VBox styleClass="u-success-card" spacing="16" maxWidth="560">
+            <padding><Insets top="32" right="36" bottom="32" left="36"/></padding>
+
+            <Label text="Détails de la commande"
+                   style="-fx-font-size:15px; -fx-font-weight:bold; -fx-text-fill:#4a3728;"/>
+
+            <Separator/>
+
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="🆔" style="-fx-font-size:16px;"/>
+                <Label fx:id="lblOrdreId" text="Commande #—"
+                       style="-fx-font-size:16px; -fx-font-weight:bold; -fx-text-fill:#2c2218;"/>
+            </HBox>
+
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="💰" style="-fx-font-size:16px;"/>
+                <Label fx:id="lblTotal" text="Montant total : —"
+                       style="-fx-font-size:15px; -fx-text-fill:#4a3728; -fx-font-weight:bold;"/>
+            </HBox>
+
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="📅" style="-fx-font-size:16px;"/>
+                <Label fx:id="lblDate" text="Passée le : —"
+                       style="-fx-font-size:13px; -fx-text-fill:#7a6a5a;"/>
+            </HBox>
+
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="📦" style="-fx-font-size:16px;"/>
+                <Label fx:id="lblNbLignes" text="— article(s)"
+                       style="-fx-font-size:13px; -fx-text-fill:#7a6a5a;"/>
+            </HBox>
+
+            <Separator/>
+
+            <!-- Lignes de commande détaillées -->
+            <Label text="Articles commandés"
+                   style="-fx-font-size:13px; -fx-font-weight:bold; -fx-text-fill:#7a6a5a;"/>
+            <VBox fx:id="boxLignes" spacing="6"/>
+
+            <Separator/>
+
+            <!-- Bouton télécharger PDF -->
+            <HBox alignment="CENTER">
+                <Button fx:id="btnPdf"
+                        text="📄  Télécharger la facture PDF"
+                        onAction="#handleDownloadPdf"
+                        prefHeight="42" prefWidth="260"
+                        style="-fx-background-color:#2d6a4f; -fx-text-fill:white;
+                               -fx-font-size:13px; -fx-font-weight:bold;
+                               -fx-border-radius:10; -fx-background-radius:10;
+                               -fx-cursor:hand;" disable="true"/>
+            </HBox>
+
+        </VBox>
+
+        <Region prefHeight="32"/>
+
+        <!-- ── Actions ── -->
+        <HBox spacing="16" alignment="CENTER">
+            <Button fx:id="btnRetour"
+                    text="← Retour à la marketplace"
+                    styleClass="u-btn-primary"
+                    onAction="#handleRetour"
+                    prefHeight="44" prefWidth="220"/>
+
+            <Button text="📋  Voir mes commandes"
+                    styleClass="u-btn-outline"
+                    onAction="#handleVoirCommandes"
+                    prefHeight="44" prefWidth="200"/>
+        </HBox>
+
+    </VBox>
+</ScrollPane>

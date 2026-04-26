@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  Vitrine Marketplace côté utilisateur.
+  Réplique Symfony : /marketplace/front
+  - Barre de recherche + filtre par type
+  - Grille de cartes produits (FlowPane)
+-->
+<VBox spacing="0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.java.controllers.MarketplaceFrontController"
+      styleClass="u-marketplace-root">
+
+    <!-- ── Barre de recherche ── -->
+    <HBox styleClass="u-search-bar" alignment="CENTER_LEFT" spacing="12">
+        <padding><Insets top="16" right="32" bottom="16" left="32"/></padding>
+
+        <TextField fx:id="searchField"
+                   promptText="🔍  Rechercher un produit, une œuvre…"
+                   styleClass="u-search-field"
+                   HBox.hgrow="ALWAYS"/>
+
+        <ComboBox fx:id="filterType"
+                  styleClass="u-filter-combo"
+                  prefWidth="180"/>
+
+        <Button fx:id="btnSearch"
+                text="Rechercher"
+                styleClass="u-btn-primary"
+                onAction="#appliquerFiltres"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label fx:id="resultCount" text="0 annonce(s)" styleClass="u-result-count"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- ── Grille de produits ── -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                styleClass="u-grid-scroll">
+
+        <FlowPane fx:id="productGrid"
+                  hgap="20" vgap="20"
+                  styleClass="u-product-grid">
+            <padding><Insets top="28" right="32" bottom="28" left="32"/></padding>
+        </FlowPane>
+
+    </ScrollPane>
+
+</VBox>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" prefWidth="420"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.java.controllers.MarketplacePostController">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label fx:id="lblTitle" text="MarketplacePost"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="12">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="140"/>
+            <ColumnConstraints prefWidth="240" hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <!-- Prix -->
+        <Label text="Prix (€) *" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfPrice" promptText="ex: 1200.00"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <!-- Statut -->
+        <Label text="Statut *" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbStatus" maxWidth="Infinity"
+                  GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <!-- Quantité disponible -->
+        <Label text="Qté Disponible *" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfAvailableQty" promptText="ex: 5"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <!-- Quantité vendue -->
+        <Label text="Qté Vendue" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfSoldQty" promptText="ex: 0" text="0"
+                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <!-- Type de produit -->
+        <Label text="Type Produit *" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbProductType" maxWidth="Infinity"
+                  GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <!-- Stock illimité -->
+        <Label text="Stock illimité" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <CheckBox fx:id="chkUnlimitedStock" text="Oui"
+                  GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <!-- ID Artwork -->
+        <Label text="ID Artwork *" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfArtworkId" promptText="ex: 5"
+                   GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <!-- ID Vendeur -->
+        <Label text="ID Vendeur *" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfSellerId" promptText="ex: 17"
+                   GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Boutons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Annuler"       onAction="#handleAnnuler"
+                style="-fx-background-color: #9E9E9E; -fx-text-fill: white; -fx-min-width: 90px;"/>
+        <Button text="💾 Sauvegarder" onAction="#handleSauvegarder"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-min-width: 120px;"/>
+    </HBox>
+
+</VBox>

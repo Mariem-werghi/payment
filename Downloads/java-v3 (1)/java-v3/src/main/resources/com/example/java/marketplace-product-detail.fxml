@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  Fiche détail d'un produit marketplace (vue utilisateur).
+  Réplique Symfony : /marketplace/product/{id}
+  - Infos du MarketplacePost
+  - Spinner de quantité
+  - Bouton "Ajouter au panier"
+-->
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.java.controllers.MarketplaceProductDetailController"
+            styleClass="u-detail-scroll">
+
+    <VBox spacing="0" styleClass="u-detail-root" maxWidth="860">
+        <padding><Insets top="40" right="60" bottom="40" left="60"/></padding>
+
+        <!-- Bouton retour -->
+        <Button fx:id="btnBack"
+                text="← Retour à la marketplace"
+                styleClass="u-btn-ghost"
+                onAction="#handleBack"/>
+
+        <Region prefHeight="24"/>
+
+        <!-- Carte principale -->
+        <HBox spacing="40" styleClass="u-detail-card">
+            <padding><Insets top="36" right="36" bottom="36" left="36"/></padding>
+
+            <!-- Panneau gauche : visuel produit -->
+            <VBox spacing="16" alignment="TOP_CENTER" prefWidth="260" minWidth="220">
+
+                <!-- Badge type produit -->
+                <Label fx:id="lblType" text="—" styleClass="u-detail-badge"/>
+
+                <!-- Placeholder image / icône -->
+                <VBox styleClass="u-detail-img-placeholder" prefWidth="220" prefHeight="220"
+                      alignment="CENTER">
+                    <Label text="🎨" style="-fx-font-size: 72px; -fx-opacity: 0.25;"/>
+                </VBox>
+
+                <!-- Vendeur -->
+                <Label fx:id="lblSeller" text="Vendeur #—" styleClass="u-detail-meta"/>
+
+                <!-- Statut -->
+                <Label fx:id="lblStatus" text="Statut : —" styleClass="u-detail-meta"/>
+
+                <!-- Date mise en vente -->
+                <Label fx:id="lblCreatedAt" text="Mis en vente le : —" styleClass="u-detail-meta"/>
+            </VBox>
+
+            <!-- Panneau droit : infos + achat -->
+            <VBox spacing="20" HBox.hgrow="ALWAYS">
+
+                <!-- Artwork -->
+                <Label fx:id="lblArtwork" text="Artwork #—" styleClass="u-detail-title"/>
+
+                <!-- Prix -->
+                <Label fx:id="lblPrice" text="— €" styleClass="u-detail-price"/>
+
+                <!-- Stock -->
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="📦" style="-fx-font-size: 14px;"/>
+                    <Label fx:id="lblStock" text="Stock : —" styleClass="u-detail-stock"/>
+                </HBox>
+
+                <Separator/>
+
+                <!-- Zone d'achat -->
+                <VBox spacing="12" styleClass="u-buy-box">
+                    <padding><Insets top="16" right="20" bottom="20" left="20"/></padding>
+
+                    <Label text="Quantité" style="-fx-font-size: 13px; -fx-font-weight: bold;
+                                                  -fx-text-fill: #7a6a5a;"/>
+                    <Spinner fx:id="spinQty"
+                             prefWidth="110"
+                             styleClass="u-qty-spinner"/>
+
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <Button fx:id="btnAddCart"
+                                text="🛒  Ajouter au panier"
+                                styleClass="u-btn-primary"
+                                onAction="#handleAddCart"
+                                prefWidth="200" prefHeight="44"/>
+
+                        <Button text="Voir le panier"
+                                styleClass="u-btn-outline"
+                                onAction="#handleGoCart"
+                                prefHeight="44"/>
+                    </HBox>
+                </VBox>
+
+            </VBox>
+        </HBox>
+
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true" styleClass="bo-content-scroll"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.java.controllers.BackofficeDashboardController">
+
+    <VBox spacing="32" styleClass="bo-content">
+        <padding><Insets top="36" right="40" bottom="36" left="40"/></padding>
+
+        <!-- Titre section -->
+        <Label text="Vue d'ensemble de la plateforme"
+               styleClass="bo-section-label"/>
+
+        <!-- ── Ligne 1 : 4 cartes métriques ── -->
+        <HBox spacing="20">
+            <!-- MarketplacePosts -->
+            <VBox styleClass="bo-metric-card" HBox.hgrow="ALWAYS" spacing="6">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label text="🛒  MARKETPLACE POSTS" styleClass="bo-metric-label"/>
+                <Label fx:id="totalPostsLbl" text="—" styleClass="bo-metric-value"/>
+                <Label text="posts publiés au total"  styleClass="bo-cell-muted"/>
+            </VBox>
+
+            <!-- Posts actifs -->
+            <VBox styleClass="bo-metric-card" HBox.hgrow="ALWAYS" spacing="6">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label text="✅  POSTS ACTIFS"       styleClass="bo-metric-label"/>
+                <Label fx:id="activePostsLbl" text="—" styleClass="bo-metric-value"/>
+                <Label text="posts avec statut actif" styleClass="bo-cell-muted"/>
+            </VBox>
+
+            <!-- Ordres -->
+            <VBox styleClass="bo-metric-card" HBox.hgrow="ALWAYS" spacing="6">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label text="📦  ORDRES"             styleClass="bo-metric-label"/>
+                <Label fx:id="totalOrdresLbl" text="—" styleClass="bo-metric-value"/>
+                <Label text="commandes passées"       styleClass="bo-cell-muted"/>
+            </VBox>
+
+            <!-- Lignes d'Ordre -->
+            <VBox styleClass="bo-metric-card" HBox.hgrow="ALWAYS" spacing="6">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label text="📋  LIGNES D'ORDRE"     styleClass="bo-metric-label"/>
+                <Label fx:id="totalLignesLbl" text="—" styleClass="bo-metric-value"/>
+                <Label text="articles commandés"      styleClass="bo-cell-muted"/>
+            </VBox>
+        </HBox>
+
+        <!-- ── Ligne 2 : Revenus + accès rapide ── -->
+        <HBox spacing="20">
+
+            <!-- Revenus totaux -->
+            <VBox styleClass="bo-metric-card" HBox.hgrow="ALWAYS" spacing="6"
+                  style="-fx-background-color: #4a3728; -fx-border-color: #4a3728;
+                         -fx-background-radius: 12; -fx-border-radius: 12;">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label text="💰  REVENUS TOTAUX"
+                       style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 11px; -fx-font-weight: bold;"/>
+                <Label fx:id="totalRevenusLbl" text="—"
+                       style="-fx-text-fill: white; -fx-font-size: 34px; -fx-font-weight: bold;"/>
+                <Label text="somme de tous les ordres"
+                       style="-fx-text-fill: rgba(255,255,255,0.5); -fx-font-size: 12px;"/>
+            </VBox>
+
+            <!-- Accès rapide -->
+            <VBox styleClass="bo-metric-card" HBox.hgrow="ALWAYS" spacing="16">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label text="⚡  ACCÈS RAPIDE" styleClass="bo-metric-label"/>
+
+                <VBox spacing="8">
+                    <Label text="Utilisez la barre latérale gauche pour naviguer entre les modules :"
+                           styleClass="bo-cell-muted" wrapText="true"/>
+
+                    <HBox spacing="8" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #f5f3ef; -fx-background-radius: 8;
+                                 -fx-padding: 10 14 10 14;">
+                        <Label text="🛒" style="-fx-font-size: 16px;"/>
+                        <VBox spacing="2">
+                            <Label text="MarketplacePosts"
+                                   style="-fx-font-weight: bold; -fx-font-size: 13px;"/>
+                            <Label text="Gérer les publications du marché"
+                                   styleClass="bo-cell-muted"/>
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="8" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #f5f3ef; -fx-background-radius: 8;
+                                 -fx-padding: 10 14 10 14;">
+                        <Label text="📦" style="-fx-font-size: 16px;"/>
+                        <VBox spacing="2">
+                            <Label text="Ordres"
+                                   style="-fx-font-weight: bold; -fx-font-size: 13px;"/>
+                            <Label text="Consulter et gérer les commandes"
+                                   styleClass="bo-cell-muted"/>
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="8" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #f5f3ef; -fx-background-radius: 8;
+                                 -fx-padding: 10 14 10 14;">
+                        <Label text="📋" style="-fx-font-size: 16px;"/>
+                        <VBox spacing="2">
+                            <Label text="Lignes d'Ordre"
+                                   style="-fx-font-weight: bold; -fx-font-size: 13px;"/>
+                            <Label text="Détails de chaque ligne de commande"
+                                   styleClass="bo-cell-muted"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+        </HBox>
+
+    </VBox>
+</ScrollPane>

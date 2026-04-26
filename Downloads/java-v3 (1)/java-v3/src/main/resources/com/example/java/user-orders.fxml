@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="0"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.java.controllers.UserOrdersController"
+      styleClass="u-orders-root">
+
+    <!-- ── En-tête ── -->
+    <VBox spacing="4">
+        <padding><Insets top="28" right="40" bottom="16" left="40"/></padding>
+        <Label text="📦  Mes Commandes" styleClass="u-cart-title"/>
+        <Label text="Retrouvez ici toutes vos commandes passées sur Artera."
+               styleClass="u-cart-subtitle"/>
+    </VBox>
+
+    <!-- ── Barre ── -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <padding><Insets right="40" bottom="16" left="40"/></padding>
+        <Button text="🔄  Actualiser" onAction="#chargerCommandes" styleClass="u-btn-outline"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="lblCount" text="" styleClass="u-result-count"/>
+    </HBox>
+
+    <!-- ── Cartes commandes ── -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="u-grid-scroll">
+        <VBox fx:id="orderContainer" spacing="14">
+            <padding><Insets top="4" right="40" bottom="32" left="40"/></padding>
+        </VBox>
+    </ScrollPane>
+
+</VBox>

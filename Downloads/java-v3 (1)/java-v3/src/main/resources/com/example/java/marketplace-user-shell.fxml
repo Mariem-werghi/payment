@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  Shell principal de l'application utilisateur (MainUser).
+  Contient la navbar en haut + un StackPane de contenu dynamique.
+  Réplique le layout Symfony : navbar persistante + vue centrale.
+-->
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.java.controllers.UserShellController"
+      styleClass="page-root"
+      spacing="0">
+
+    <!-- ══════════════════════════════════════════
+         NAVBAR SUPÉRIEURE
+    ══════════════════════════════════════════ -->
+    <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="16"
+          minHeight="60" prefHeight="60">
+
+        <!-- Logo -->
+        <Label text="Artera" styleClass="nav-logo"/>
+        <Label text="Marketplace" style="-fx-text-fill: rgba(255,255,255,0.55); -fx-font-size:13px;"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- Nav buttons -->
+        <Button fx:id="navMarket"
+                text="🎨  Découvrir"
+                styleClass="u-nav-btn"
+                onAction="#showMarketplace"/>
+
+        <!-- NOUVEAU : Publier une œuvre (anciennement admin seulement) -->
+        <Button fx:id="navSell"
+                text="➕  Publier"
+                styleClass="u-nav-btn"
+                onAction="#showSell"/>
+
+        <!-- Cart button with badge -->
+        <StackPane>
+            <Button fx:id="navCart"
+                    text="🛒  Mon Panier"
+                    styleClass="u-nav-btn"
+                    onAction="#showCart"/>
+            <Label fx:id="cartBadge" text=""
+                   styleClass="u-cart-badge"
+                   visible="false"
+                   StackPane.alignment="TOP_RIGHT"/>
+        </StackPane>
+
+        <Button fx:id="navOrders"
+                text="📦  Mes Commandes"
+                styleClass="u-nav-btn"
+                onAction="#showOrders"/>
+    </HBox>
+
+    <!-- ══════════════════════════════════════════
+         BARRE DE TITRE DE PAGE
+    ══════════════════════════════════════════ -->
+    <HBox styleClass="u-page-header" alignment="CENTER_LEFT" spacing="0"
+          minHeight="44" prefHeight="44">
+        <padding><Insets left="32"/></padding>
+        <Label fx:id="pageTitle" text="Marketplace" styleClass="u-page-header-title"/>
+    </HBox>
+
+    <!-- ══════════════════════════════════════════
+         CONTENU DYNAMIQUE
+    ══════════════════════════════════════════ -->
+    <StackPane fx:id="contentPane" VBox.vgrow="ALWAYS"/>
+
+</VBox>

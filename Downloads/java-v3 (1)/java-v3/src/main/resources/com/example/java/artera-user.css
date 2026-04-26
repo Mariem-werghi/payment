@@ -1,0 +1,438 @@
+/* ═══════════════════════════════════════════════════════
+   Artera – Marketplace User Frontend  |  artera-user.css
+   Palette: warm brown #4a3728, beige bg #f5f3ef
+   ═══════════════════════════════════════════════════════ */
+
+.root {
+    -ar-brown:       #4a3728;
+    -ar-brown-med:   #6b4f3a;
+    -ar-brown-light: #8c7060;
+    -ar-brown-pale:  #b09080;
+    -ar-bg:          #f5f3ef;
+    -ar-bg-s:        #ebe8e2;
+    -ar-bg-card:     #ffffff;
+    -ar-border:      #d4cfc7;
+    -ar-text:        #2c2218;
+    -ar-muted:       #7a6a5a;
+    -ar-red:         #c0392b;
+    -ar-green:       #2d6a4f;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-background-color: -ar-bg;
+}
+
+/* ── Page root ── */
+.page-root { -fx-background-color: -ar-bg; }
+
+/* ════════════════════════════════════════════════════════
+   NAVBAR
+   ════════════════════════════════════════════════════════ */
+.navbar {
+    -fx-background-color: -ar-brown;
+    -fx-padding: 0 32 0 32;
+    -fx-pref-height: 60;
+    -fx-min-height: 60;
+}
+
+.nav-logo {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-font-family: Georgia, serif;
+}
+
+/* Navigation buttons in the navbar */
+.u-nav-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.35);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: rgba(255,255,255,0.88);
+    -fx-font-size: 13px;
+    -fx-padding: 7 16 7 16;
+    -fx-cursor: hand;
+}
+.u-nav-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-text-fill: white;
+}
+.u-nav-active {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+}
+
+/* Cart badge (small red circle with count) */
+.u-cart-badge {
+    -fx-background-color: -ar-red;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 5 2 5;
+    -fx-min-width: 18;
+    -fx-pref-width: 18;
+    -fx-alignment: CENTER;
+    -fx-translate-x: 6;
+    -fx-translate-y: -4;
+}
+
+/* ════════════════════════════════════════════════════════
+   PAGE HEADER BAR
+   ════════════════════════════════════════════════════════ */
+.u-page-header {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 0 0 1 0;
+    -fx-min-height: 44;
+    -fx-pref-height: 44;
+}
+.u-page-header-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-muted;
+}
+
+/* ════════════════════════════════════════════════════════
+   MARKETPLACE FRONT
+   ════════════════════════════════════════════════════════ */
+.u-marketplace-root { -fx-background-color: -ar-bg; }
+
+.u-search-bar {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.u-search-field {
+    -fx-background-color: -ar-bg-s;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 9 16 9 16;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-text;
+    -fx-prompt-text-fill: -ar-muted;
+    -fx-pref-height: 38;
+}
+.u-search-field:focused {
+    -fx-background-color: white;
+    -fx-border-color: -ar-brown-light;
+}
+
+.u-filter-combo {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-text;
+    -fx-pref-height: 38;
+}
+
+.u-result-count {
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-muted;
+}
+
+.u-grid-scroll {
+    -fx-background-color: -ar-bg;
+    -fx-background: -ar-bg;
+    -fx-border-color: transparent;
+}
+.u-grid-scroll .viewport { -fx-background-color: -ar-bg; }
+
+.u-product-grid {
+    -fx-background-color: -ar-bg;
+}
+
+/* ── Product card ── */
+.u-product-card {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.07), 6, 0, 0, 2);
+    -fx-cursor: hand;
+}
+.u-product-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.16), 12, 0, 0, 4);
+}
+
+.u-badge {
+    -fx-background-color: -ar-bg-s;
+    -fx-background-radius: 20;
+    -fx-text-fill: -ar-brown;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10 4 10;
+    -fx-max-width: 130;
+}
+
+.u-card-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+}
+
+.u-card-price {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-brown;
+    -fx-font-family: Georgia, serif;
+}
+
+.u-card-stock {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-green;
+    -fx-font-weight: bold;
+}
+
+.u-card-meta {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-muted;
+}
+
+/* ════════════════════════════════════════════════════════
+   PRODUCT DETAIL
+   ════════════════════════════════════════════════════════ */
+.u-detail-scroll {
+    -fx-background-color: -ar-bg;
+    -fx-background: -ar-bg;
+    -fx-border-color: transparent;
+}
+.u-detail-scroll .viewport { -fx-background-color: -ar-bg; }
+.u-detail-root { -fx-background-color: -ar-bg; }
+
+.u-detail-card {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.08), 12, 0, 0, 4);
+}
+
+.u-detail-badge {
+    -fx-background-color: -ar-brown;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 14 5 14;
+}
+
+.u-detail-img-placeholder {
+    -fx-background-color: -ar-bg-s;
+    -fx-background-radius: 10;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.u-detail-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+    -fx-font-family: Georgia, serif;
+}
+
+.u-detail-price {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-brown;
+    -fx-font-family: Georgia, serif;
+}
+
+.u-detail-stock {
+    -fx-font-size: 14px;
+    -fx-text-fill: -ar-green;
+    -fx-font-weight: bold;
+}
+
+.u-detail-meta {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-muted;
+}
+
+/* Buy box */
+.u-buy-box {
+    -fx-background-color: -ar-bg-s;
+    -fx-background-radius: 10;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.u-qty-spinner {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* ════════════════════════════════════════════════════════
+   CART
+   ════════════════════════════════════════════════════════ */
+.u-cart-root { -fx-background-color: -ar-bg; }
+
+.u-cart-header { -fx-background-color: -ar-bg; }
+
+.u-cart-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+    -fx-font-family: Georgia, serif;
+}
+.u-cart-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-muted;
+}
+
+.u-cart-table {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+}
+
+/* Order summary sidebar */
+.u-cart-summary {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.07), 8, 0, 0, 3);
+}
+
+.u-cart-total {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-brown;
+}
+
+/* ════════════════════════════════════════════════════════
+   ORDER SUCCESS
+   ════════════════════════════════════════════════════════ */
+.u-success-scroll {
+    -fx-background-color: -ar-bg;
+    -fx-background: -ar-bg;
+    -fx-border-color: transparent;
+}
+.u-success-scroll .viewport { -fx-background-color: -ar-bg; }
+
+.u-success-card {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.08), 12, 0, 0, 4);
+}
+
+/* ════════════════════════════════════════════════════════
+   ORDERS LIST
+   ════════════════════════════════════════════════════════ */
+.u-orders-root { -fx-background-color: -ar-bg; }
+
+/* ════════════════════════════════════════════════════════
+   BUTTONS
+   ════════════════════════════════════════════════════════ */
+
+/* Primary (brown filled) */
+.u-btn-primary {
+    -fx-background-color: -ar-brown;
+    -fx-border-color: transparent;
+    -fx-border-radius: 9;
+    -fx-background-radius: 9;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 9 20 9 20;
+    -fx-cursor: hand;
+}
+.u-btn-primary:hover { -fx-background-color: -ar-brown-med; }
+.u-btn-primary:disabled { -fx-opacity: 0.45; }
+
+/* Outline */
+.u-btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 9;
+    -fx-background-radius: 9;
+    -fx-border-width: 1;
+    -fx-text-fill: -ar-brown;
+    -fx-font-size: 13px;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+}
+.u-btn-outline:hover {
+    -fx-background-color: -ar-bg-s;
+    -fx-border-color: -ar-brown-light;
+}
+
+/* Ghost (text only) */
+.u-btn-ghost {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -ar-brown-med;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-padding: 8 8 8 8;
+}
+.u-btn-ghost:hover { -fx-text-fill: -ar-brown; }
+
+/* Danger outline */
+.u-btn-danger {
+    -fx-background-color: transparent;
+    -fx-border-color: #f0b0b0;
+    -fx-border-radius: 9;
+    -fx-background-radius: 9;
+    -fx-border-width: 1;
+    -fx-text-fill: -ar-red;
+    -fx-font-size: 13px;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+}
+.u-btn-danger:hover { -fx-background-color: #fdecea; }
+.u-btn-danger:disabled { -fx-opacity: 0.40; }
+
+/* Danger ghost */
+.u-btn-danger-ghost {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -ar-red;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 6 8 6 8;
+}
+.u-btn-danger-ghost:hover { -fx-background-color: #fdecea; }
+.u-btn-danger-ghost:disabled { -fx-opacity: 0.35; }
+
+/* ════════════════════════════════════════════════════════
+   SCROLLBARS
+   ════════════════════════════════════════════════════════ */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: -ar-border;
+    -fx-background-radius: 4;
+}
+.scroll-bar:vertical .track,
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.scroll-bar:horizontal { -fx-opacity: 0; -fx-pref-height: 0; }
+
+.separator .line {
+    -fx-border-color: -ar-border;
+    -fx-border-width: 0.5 0 0 0;
+}

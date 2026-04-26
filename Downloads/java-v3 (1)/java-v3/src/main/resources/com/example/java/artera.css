@@ -1,0 +1,1290 @@
+/* ═══════════════════════════════════════════════════════
+   Artera – Art Humain  |  artera.css
+   Palette: warm brown #4a3728, beige bg #f5f3ef
+   ═══════════════════════════════════════════════════════ */
+
+.root {
+    -ar-brown:      #4a3728;
+    -ar-brown-med:  #6b4f3a;
+    -ar-brown-light:#8c7060;
+    -ar-brown-pale: #b09080;
+    -ar-bg:         #f5f3ef;
+    -ar-bg-s:       #ebe8e2;
+    -ar-bg-card:    #ffffff;
+    -ar-border:     #d4cfc7;
+    -ar-text:       #2c2218;
+    -ar-muted:      #7a6a5a;
+    -ar-tag-bg:     #e8e4dc;
+    -ar-red:        #c0392b;
+    -ar-green:      #2d6a4f;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-background-color: -ar-bg;
+}
+
+/* ── Page root ── */
+.page-root {
+    -fx-background-color: -ar-bg;
+}
+
+/* ════════════════════════════════════════════════════════
+   NAVBAR
+   ════════════════════════════════════════════════════════ */
+.navbar {
+    -fx-background-color: -ar-brown;
+    -fx-padding: 0 32 0 32;
+    -fx-pref-height: 60;
+    -fx-min-height: 60;
+}
+
+.nav-logo {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-font-family: Georgia, serif;
+}
+
+.nav-search {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.25);
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.6);
+    -fx-padding: 8 16 8 16;
+    -fx-font-size: 13px;
+    -fx-pref-height: 36;
+}
+
+.nav-search:focused {
+    -fx-background-color: rgba(255,255,255,0.22);
+    -fx-border-color: rgba(255,255,255,0.5);
+}
+
+.nav-icon-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font-size: 18px;
+    -fx-cursor: hand;
+    -fx-padding: 6 10 6 10;
+    -fx-background-radius: 6;
+}
+
+.nav-icon-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-text-fill: white;
+}
+
+.nav-connexion-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.6);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 16 6 16;
+    -fx-cursor: hand;
+}
+
+.nav-connexion-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.15);
+}
+
+.nav-sep {
+    -fx-border-color: rgba(255,255,255,0.25);
+    -fx-padding: 0 4 0 4;
+}
+
+/* ════════════════════════════════════════════════════════
+   HOME PAGE
+   ════════════════════════════════════════════════════════ */
+
+/* ── Feed scroll ── */
+.feed-scroll {
+    -fx-background-color: -ar-bg;
+    -fx-background: -ar-bg;
+    -fx-border-color: transparent;
+}
+.feed-scroll .viewport { -fx-background-color: -ar-bg; }
+.feed-outer { -fx-background-color: -ar-bg; -fx-alignment: TOP_CENTER; }
+.feed-inner { -fx-alignment: TOP_CENTER; }
+
+/* ── Filter bar ── */
+.filter-bar {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 8 10 8 10;
+}
+
+.filter-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 16 8 16;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-text;
+    -fx-cursor: hand;
+}
+
+.filter-btn:hover {
+    -fx-background-color: -ar-bg-s;
+}
+
+.filter-active {
+    -fx-background-color: -ar-brown;
+    -fx-border-color: -ar-brown;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* ── Post card ── */
+.post-card {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.06), 6, 0, 0, 2);
+}
+
+.post-author {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+}
+
+.post-handle {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-muted;
+}
+
+.post-time {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-muted;
+}
+
+.post-image {
+    -fx-background-radius: 0;
+    -fx-alignment: CENTER;
+}
+
+.post-caption-text {
+    -fx-font-size: 14px;
+    -fx-fill: -ar-text;
+}
+
+.post-tags-text {
+    -fx-font-size: 13px;
+    -fx-fill: -ar-brown-med;
+    -fx-font-weight: bold;
+}
+
+.more-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-text-fill: -ar-muted;
+    -fx-padding: 2 8 2 8;
+    -fx-background-radius: 4;
+}
+.more-btn:hover { -fx-background-color: -ar-bg-s; }
+
+.action-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 5 12 5 12;
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-muted;
+    -fx-cursor: hand;
+}
+.action-btn:hover {
+    -fx-background-color: -ar-bg-s;
+    -fx-text-fill: -ar-brown;
+}
+.action-btn-liked {
+    -fx-text-fill: -ar-red;
+    -fx-border-color: -ar-red;
+}
+
+/* ── Sidebar ── */
+.sidebar-scroll {
+    -fx-background-color: -ar-bg;
+    -fx-background: -ar-bg;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 0 0 0 1;
+}
+.sidebar-scroll .viewport { -fx-background-color: -ar-bg; }
+.sidebar-panel { -fx-background-color: -ar-bg; }
+
+.sidebar-card {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 16 16 16 16;
+}
+
+.sidebar-section-title {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-muted;
+    -fx-letter-spacing: 1;
+}
+
+.sidebar-link {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-brown-med;
+    -fx-border-color: transparent;
+}
+
+.artist-name {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+}
+
+.artist-sub {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-muted;
+}
+
+.follow-btn {
+    -fx-background-color: -ar-brown;
+    -fx-border-color: -ar-brown;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 14 5 14;
+    -fx-cursor: hand;
+}
+.follow-btn:hover { -fx-background-color: -ar-brown-med; }
+.follow-btn-active {
+    -fx-background-color: transparent;
+    -fx-border-color: -ar-brown;
+    -fx-text-fill: -ar-brown;
+}
+
+.tag-pill {
+    -fx-background-color: -ar-tag-bg;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 5 12 5 12;
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-brown;
+    -fx-cursor: hand;
+}
+.tag-pill:hover { -fx-background-color: -ar-bg-s; }
+
+.footer-links { -fx-padding: 4 0 2 0; }
+.footer-link {
+    -fx-font-size: 11px;
+    -fx-text-fill: -ar-muted;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+.footer-copy {
+    -fx-font-size: 11px;
+    -fx-text-fill: -ar-muted;
+}
+
+/* ════════════════════════════════════════════════════════
+   EXPLORE PAGE
+   ════════════════════════════════════════════════════════ */
+
+.explore-hero {
+    -fx-background-color: -ar-brown;
+    -fx-padding: 40 32 40 32;
+}
+
+.explore-hero-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-family: Georgia, serif;
+    -fx-font-style: italic;
+}
+
+.explore-hero-sub {
+    -fx-font-size: 14px;
+    -fx-text-fill: rgba(255,255,255,0.75);
+}
+
+.explore-search {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.3);
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+    -fx-padding: 9 16 9 16;
+    -fx-font-size: 14px;
+}
+
+.explore-search-btn {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-text-fill: -ar-brown;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 9 20 9 20;
+    -fx-cursor: hand;
+}
+
+.category-bar {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 0 0 1 0;
+}
+
+.cat-pill {
+    -fx-background-color: transparent;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 6 16 6 16;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-text;
+    -fx-cursor: hand;
+}
+.cat-pill:hover { -fx-background-color: -ar-bg-s; }
+.cat-active {
+    -fx-background-color: -ar-brown;
+    -fx-border-color: -ar-brown;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.sort-bar { -fx-background-color: -ar-bg; }
+.sort-label { -fx-font-size: 13px; -fx-text-fill: -ar-muted; }
+
+.sort-combo {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-text;
+    -fx-pref-height: 32;
+}
+
+.result-count { -fx-font-size: 13px; -fx-text-fill: -ar-muted; }
+
+.gallery-scroll {
+    -fx-background-color: -ar-bg;
+    -fx-background: -ar-bg;
+    -fx-border-color: transparent;
+}
+.gallery-scroll .viewport { -fx-background-color: -ar-bg; }
+.gallery-pane { -fx-background-color: -ar-bg; }
+
+.gallery-card {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.07), 4, 0, 0, 2);
+}
+.gallery-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.15), 8, 0, 0, 3);
+}
+
+.gallery-img {
+    -fx-background-radius: 10 10 0 0;
+    -fx-alignment: CENTER;
+}
+
+.gallery-badge {
+    -fx-background-color: rgba(74,55,40,0.75);
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-padding: 3 8 3 8;
+}
+
+.gallery-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+}
+
+.gallery-author {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-muted;
+}
+
+.gallery-likes {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-brown-light;
+}
+
+.gallery-save-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: -ar-muted;
+    -fx-cursor: hand;
+    -fx-padding: 0 4 0 4;
+}
+.gallery-save-btn:hover { -fx-text-fill: -ar-brown; }
+
+/* ════════════════════════════════════════════════════════
+   BACKOFFICE
+   ════════════════════════════════════════════════════════ */
+
+.bo-sidenav {
+    -fx-background-color: -ar-brown;
+    -fx-pref-width: 220;
+}
+
+.bo-logo {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-font-family: Georgia, serif;
+    -fx-padding: 0 24 2 24;
+}
+
+.bo-subtitle {
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-font-size: 11px;
+    -fx-padding: 0 24 0 24;
+    -fx-letter-spacing: 1;
+}
+
+.bo-sep {
+    -fx-border-color: rgba(255,255,255,0.15);
+    -fx-padding: 0 20 0 20;
+}
+
+.bo-nav-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: rgba(255,255,255,0.78);
+    -fx-font-size: 13px;
+    -fx-padding: 11 24 11 24;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+}
+.bo-nav-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+}
+.bo-nav-active {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: white transparent transparent transparent;
+    -fx-border-width: 0 0 0 3;
+}
+
+/* ── Backoffice TabPane ── */
+.bo-tab-pane {
+    -fx-background-color: -ar-bg;
+    -fx-tab-min-height: 40;
+    -fx-tab-max-height: 40;
+}
+.bo-tab-pane .tab-header-area {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 24 0 24;
+}
+.bo-tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: white;
+}
+.bo-tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8 18 8 18;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-muted;
+    -fx-cursor: hand;
+}
+.bo-tab-pane .tab:hover {
+    -fx-background-color: -ar-bg-s;
+    -fx-text-fill: -ar-brown;
+}
+.bo-tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent -ar-brown transparent;
+    -fx-border-width: 0 0 3 0;
+    -fx-text-fill: -ar-brown;
+    -fx-font-weight: bold;
+}
+.bo-tab-pane .tab:disabled {
+    -fx-opacity: 0;
+    -fx-managed: false;
+}
+.bo-tab-pane .tab-content-area {
+    -fx-background-color: -ar-bg;
+}
+.bo-tab-pane .tab .tab-label {
+    -fx-text-fill: inherit;
+}
+
+/* Top bar */
+.bo-topbar {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 12 24 12 24;
+    -fx-min-height: 60;
+}
+
+.bo-page-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+}
+
+.bo-search {
+    -fx-background-color: -ar-bg-s;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 7 12 7 12;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-text;
+    -fx-pref-height: 34;
+}
+
+.bo-primary-btn {
+    -fx-background-color: -ar-brown;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+}
+.bo-primary-btn:hover { -fx-background-color: -ar-brown-med; }
+
+/* Content area */
+.bo-content-scroll {
+    -fx-background-color: -ar-bg;
+    -fx-background: -ar-bg;
+    -fx-border-color: transparent;
+}
+.bo-content-scroll .viewport { -fx-background-color: -ar-bg; }
+.bo-content { -fx-background-color: -ar-bg; }
+
+/* Metric cards */
+.bo-metric-card {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 16 16 16 16;
+}
+
+.bo-metric-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-muted;
+    -fx-font-weight: bold;
+}
+
+.bo-metric-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-brown;
+}
+
+.bo-metric-sub {
+    -fx-font-size: 11px;
+    -fx-text-fill: -ar-muted;
+}
+
+.bo-section-label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+    -fx-padding: 0 0 4 0;
+}
+
+/* Table */
+.bo-table {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.bo-table-header {
+    -fx-background-color: -ar-bg-s;
+    -fx-background-radius: 10 10 0 0;
+    -fx-border-color: transparent transparent -ar-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.bo-table-th {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-muted;
+    -fx-padding: 10 12 10 12;
+    -fx-text-transform: uppercase;
+}
+
+.bo-table-row {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent -ar-border transparent;
+    -fx-border-width: 0 0 0.5 0;
+}
+.bo-table-row-alt {
+    -fx-background-color: -ar-bg;
+    -fx-border-color: transparent transparent -ar-border transparent;
+    -fx-border-width: 0 0 0.5 0;
+}
+.bo-table-row:hover, .bo-table-row-alt:hover {
+    -fx-background-color: -ar-tag-bg;
+}
+
+.bo-table-td {
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-text;
+    -fx-padding: 10 12 10 12;
+}
+
+.bo-cell-main {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+}
+
+.bo-cell-muted {
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-muted;
+}
+
+/* Status badges */
+.status-active {
+    -fx-text-fill: #2d6a4f;
+    -fx-background-color: #d8f3dc;
+    -fx-background-radius: 20;
+    -fx-padding: 3 10 3 10;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-max-width: 80;
+    -fx-alignment: CENTER;
+}
+
+.status-pending {
+    -fx-text-fill: #854f0b;
+    -fx-background-color: #faeeda;
+    -fx-background-radius: 20;
+    -fx-padding: 3 10 3 10;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-max-width: 90;
+    -fx-alignment: CENTER;
+}
+
+.status-archived {
+    -fx-text-fill: #5f5e5a;
+    -fx-background-color: #e8e4dc;
+    -fx-background-radius: 20;
+    -fx-padding: 3 10 3 10;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-max-width: 80;
+    -fx-alignment: CENTER;
+}
+
+/* Action buttons */
+.bo-edit-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+    -fx-text-fill: -ar-brown-med;
+    -fx-font-size: 13px;
+    -fx-padding: 3 8 3 8;
+    -fx-cursor: hand;
+}
+.bo-edit-btn:hover { -fx-background-color: -ar-bg-s; }
+
+.bo-delete-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #f0b0b0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+    -fx-text-fill: -ar-red;
+    -fx-font-size: 11px;
+    -fx-padding: 3 8 3 8;
+    -fx-cursor: hand;
+}
+.bo-delete-btn:hover { -fx-background-color: #fdecea; }
+
+/* List rows */
+.bo-list-row {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+/* Comment rows */
+.bo-comment-row {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 12 14 12 14;
+}
+
+/* ── Front-office comment card (PostCard inline comments) ── */
+.comment-card {
+    -fx-background-color: -ar-bg-s;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10 12 8 12;
+}
+
+/* Small icon button for edit / cancel on comments */
+.comment-action-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+    -fx-text-fill: -ar-muted;
+    -fx-font-size: 11px;
+    -fx-padding: 3 7 3 7;
+    -fx-cursor: hand;
+}
+.comment-action-btn:hover {
+    -fx-background-color: -ar-tag-bg;
+    -fx-text-fill: -ar-brown;
+}
+
+/* Save-edit confirmation button on comments */
+.comment-save-btn {
+    -fx-background-color: -ar-brown;
+    -fx-border-color: transparent;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 10 3 10;
+    -fx-cursor: hand;
+}
+.comment-save-btn:hover { -fx-background-color: -ar-brown-med; }
+
+/* Delete button on comments */
+.comment-delete-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #f0b0b0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+    -fx-text-fill: -ar-red;
+    -fx-font-size: 11px;
+    -fx-padding: 3 7 3 7;
+    -fx-cursor: hand;
+}
+.comment-delete-btn:hover { -fx-background-color: #fdecea; }
+
+/* Category cards */
+.bo-cat-card {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 14 16 14 16;
+}
+.bo-cat-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+}
+
+/* Settings */
+.bo-settings-form {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 20 20 20 20;
+}
+
+.bo-input {
+    -fx-background-color: -ar-bg-s;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 9 12 9 12;
+    -fx-font-size: 14px;
+    -fx-text-fill: -ar-text;
+}
+.bo-input:focused {
+    -fx-border-color: -ar-brown-light;
+    -fx-background-color: white;
+}
+
+/* Scrollbars */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: -ar-border;
+    -fx-background-radius: 4;
+}
+.scroll-bar:vertical .track,
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.scroll-bar:horizontal { -fx-opacity: 0; -fx-pref-height: 0; }
+
+.separator .line {
+    -fx-border-color: -ar-border;
+    -fx-border-width: 0.5 0 0 0;
+}
+/* ════════════════════════════════════════════════════════
+   LANDING PAGE  –  append to artera.css
+   ════════════════════════════════════════════════════════ */
+
+/* ── Hero ── */
+.landing-hero {
+    -fx-background-color: -ar-bg;
+    -fx-min-height: 520;
+}
+
+.landing-hero-left {
+    -fx-background-color: -ar-bg;
+}
+
+.landing-eyebrow {
+    -fx-text-fill: -ar-brown-light;
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-letter-spacing: 0.1em;
+}
+
+.landing-headline {
+    -fx-text-fill: -ar-brown;
+    -fx-font-size: 56px;
+    -fx-font-weight: bold;
+    -fx-font-family: Georgia, serif;
+    -fx-line-spacing: 2;
+}
+
+.landing-headline-italic {
+    -fx-font-style: italic;
+    -fx-text-fill: -ar-brown-med;
+}
+
+.landing-sub {
+    -fx-text-fill: -ar-muted;
+    -fx-font-size: 15px;
+    -fx-line-spacing: 5;
+    -fx-font-weight: 300;
+}
+
+.landing-stat-sep {
+    -fx-background-color: -ar-border;
+    -fx-pref-height: 1;
+    -fx-min-height: 1;
+    -fx-max-height: 1;
+}
+
+.landing-stat-num {
+    -fx-text-fill: -ar-brown;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-font-family: Georgia, serif;
+}
+
+.landing-stat-label {
+    -fx-text-fill: -ar-muted;
+    -fx-font-size: 12px;
+}
+
+/* ── Hero CTA buttons ── */
+.landing-btn-primary {
+    -fx-background-color: -ar-brown;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 28 12 28;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+}
+
+.landing-btn-primary:hover {
+    -fx-background-color: -ar-brown-med;
+}
+
+.landing-btn-ghost {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -ar-brown;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 12 4 12 4;
+}
+
+.landing-btn-ghost:hover {
+    -fx-text-fill: -ar-brown-med;
+}
+
+/* ── Mosaic panel (right half of hero) ── */
+.landing-mosaic-panel {
+    -fx-background-color: -ar-bg-s;
+}
+
+.landing-mosaic-symbol {
+    -fx-text-fill: derive(-ar-brown, 60%);
+    -fx-font-size: 120px;
+    -fx-opacity: 0.18;
+}
+
+/* ── Destinations section ── */
+.landing-dest-section {
+    -fx-background-color: -ar-bg;
+}
+
+.landing-section-tag {
+    -fx-text-fill: -ar-brown-light;
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.15em;
+}
+
+.landing-section-title {
+    -fx-text-fill: -ar-brown;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-font-family: Georgia, serif;
+}
+
+/* ── Destination cards ── */
+.landing-dest-card {
+    -fx-background-color: -ar-bg-card;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.08), 16, 0, 0, 4);
+    -fx-cursor: hand;
+}
+
+.landing-dest-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.20), 40, 0, 0, 10);
+    -fx-translate-y: -4;
+}
+
+/* Card visual panels */
+.landing-card-visual {
+    -fx-background-radius: 16 16 0 0;
+    -fx-alignment: CENTER;
+}
+
+.landing-card-home {
+    -fx-background-color: linear-gradient(to bottom right, #d4b896, #a07048, #6b3f22);
+}
+
+.landing-card-events {
+    -fx-background-color: linear-gradient(to bottom right, #c8b8a0, #7a5c3e, #4a2e1c);
+}
+
+.landing-card-market {
+    -fx-background-color: linear-gradient(to bottom right, #bca882, #8c6040, #52301a);
+}
+
+.landing-card-icon {
+    -fx-font-size: 64px;
+    -fx-opacity: 0.4;
+    -fx-text-fill: white;
+}
+
+.landing-card-badge {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.30);
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 12 5 12;
+}
+
+.landing-card-body {
+    -fx-background-color: -ar-bg-card;
+    -fx-background-radius: 0 0 16 16;
+}
+
+.landing-card-num {
+    -fx-text-fill: -ar-brown-pale;
+    -fx-font-size: 11px;
+    -fx-letter-spacing: 0.1em;
+}
+
+.landing-card-title {
+    -fx-text-fill: -ar-brown;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: Georgia, serif;
+}
+
+.landing-card-desc {
+    -fx-text-fill: -ar-muted;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 4;
+}
+
+.landing-card-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -ar-brown;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.landing-card-btn:hover {
+    -fx-text-fill: -ar-brown-med;
+}
+
+/* ── Features strip ── */
+.landing-features {
+    -fx-background-color: -ar-brown;
+}
+
+.landing-feat-icon {
+    -fx-text-fill: rgba(255,255,255,0.5);
+    -fx-font-size: 24px;
+}
+
+.landing-feat-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-font-family: Georgia, serif;
+}
+
+.landing-feat-text {
+    -fx-text-fill: rgba(255,255,255,0.60);
+    -fx-font-size: 13px;
+    -fx-line-spacing: 4;
+}
+
+/* ── Footer ── */
+.landing-footer {
+    -fx-background-color: #2c1a0e;
+}
+
+.landing-footer-logo {
+    -fx-text-fill: rgba(255,255,255,0.9);
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-font-family: Georgia, serif;
+}
+
+.landing-footer-tagline {
+    -fx-text-fill: rgba(255,255,255,0.4);
+    -fx-font-size: 12px;
+}
+
+.landing-footer-copy {
+    -fx-text-fill: rgba(255,255,255,0.3);
+    -fx-font-size: 12px;
+}
+
+/* ── Hide ScrollPane chrome ── */
+.landing-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+.landing-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+/* ════════════════════════════════════════════════════════
+   POST CARD  –  append to artera.css
+   ════════════════════════════════════════════════════════ */
+
+/* Action bar – count baked into button text, no separate label needed.
+   These rules make the three left buttons and the save button
+   look identical and sit at a comfortable height. */
+
+/* Liked state: heart turns red, border follows */
+.action-btn-liked {
+    -fx-text-fill:   -ar-red;
+    -fx-border-color: -ar-red;
+}
+.action-btn-liked:hover {
+    -fx-background-color: #fdecea;
+    -fx-text-fill: -ar-red;
+}
+
+/* Saved state: bookmark turns blue */
+.action-btn-saved {
+    -fx-text-fill:   #2980b9;
+    -fx-border-color: #2980b9;
+}
+.action-btn-saved:hover {
+    -fx-background-color: #e8f4fb;
+    -fx-text-fill: #2980b9;
+}
+
+/* ── Inline comment section ── */
+.comment-input {
+    -fx-background-color: -ar-bg-s;
+    -fx-border-color:     -ar-border;
+    -fx-border-radius:    20;
+    -fx-background-radius:20;
+    -fx-border-width:     1;
+    -fx-padding:          7 14 7 14;
+    -fx-font-size:        13px;
+    -fx-text-fill:        -ar-text;
+    -fx-prompt-text-fill: -ar-muted;
+}
+
+
+/* "Envoyer" button reuses action-btn but with a filled brown look */
+.comment-send-btn {
+    -fx-background-color:  -ar-brown;
+    -fx-border-color:      -ar-brown;
+    -fx-border-radius:     20;
+    -fx-background-radius: 20;
+    -fx-text-fill:         white;
+    -fx-font-size:         13px;
+    -fx-font-weight:       bold;
+    -fx-padding:           7 16 7 16;
+    -fx-cursor:            hand;
+}
+.comment-send-btn:hover {
+    -fx-background-color: -ar-brown-med;
+    -fx-border-color:     -ar-brown-med;
+}
+
+/* ════════════════════════════════════════════════════════
+   ADD POST MODAL  – artera.css
+   ════════════════════════════════════════════════════════ */
+
+.add-post-modal {
+    -fx-background-color: white;
+    -fx-border-color: -ar-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(74,55,40,0.14), 20, 0, 0, 6);
+}
+
+.add-post-header {
+    -fx-background-color: white;
+    -fx-background-radius: 14 14 0 0;
+}
+
+.add-post-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-text;
+}
+
+.add-post-field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ar-muted;
+}
+
+.add-post-input {
+    -fx-background-color: -ar-bg-s;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ar-text;
+}
+.add-post-input:focused {
+    -fx-border-color: -ar-brown-light;
+    -fx-background-color: white;
+}
+
+.add-post-textarea {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 15px;
+    -fx-text-fill: -ar-text;
+    -fx-prompt-text-fill: -ar-muted;
+    -fx-pref-height: 120;
+}
+
+.add-post-preview {
+    -fx-background-color: -ar-bg-s;
+    -fx-background-radius: 8;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.add-post-audience-combo {
+    -fx-background-color: -ar-tag-bg;
+    -fx-border-color: -ar-border;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 1;
+    -fx-font-size: 12px;
+    -fx-text-fill: -ar-brown;
+    -fx-pref-height: 28;
+}
+
+.add-post-submit-btn {
+    -fx-background-color: -ar-brown;
+    -fx-border-color: transparent;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 22 8 22;
+    -fx-cursor: hand;
+}
+.add-post-submit-btn:hover { -fx-background-color: -ar-brown-med; }
+.add-post-submit-btn:disabled { -fx-opacity: 0.45; }
