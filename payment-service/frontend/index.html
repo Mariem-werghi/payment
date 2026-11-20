@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSphere | Financial Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icônes -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-cube"></i>
+            <span>ShopSphere</span>
+        </div>
+
+        <p class="menu-title">MENU PRINCIPAL</p>
+
+        <nav>
+            <a href="#" class="nav-link active">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-credit-card"></i>
+                <span>Paiements</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-file-invoice"></i>
+                <span>Factures</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-rotate-left"></i>
+                <span>Remboursements</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Statistiques</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Paramètres</span>
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <h1>Financial Dashboard</h1>
+                <p>Bienvenue dans votre espace financier</p>
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-button" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+
+                <div class="profile">
+                    <div class="avatar">A</div>
+                    <div>
+                        <strong>Admin</strong>
+                        <small>Administrateur</small>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- FILTRE -->
+        <section class="filter-section">
+            <div>
+                <h2>Vue d'ensemble</h2>
+                <p>Suivez vos performances financières</p>
+            </div>
+
+            <select id="periodFilter">
+                <option value="all">Toutes les périodes</option>
+                <option value="today">Aujourd'hui</option>
+                <option value="week">Cette semaine</option>
+                <option value="month">Ce mois</option>
+            </select>
+        </section>
+
+        <!-- CARTES FINANCIERES -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Montant collecté</span>
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <h2 id="totalCollected">0 TND</h2>
+                <p>Montant des paiements validés</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Paiements réussis</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h2 id="successfulPayments">0</h2>
+                <p>Transactions confirmées</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Paiements échoués</span>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <h2 id="failedPayments">0</h2>
+                <p>Transactions refusées</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Factures créées</span>
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+                <h2 id="totalInvoices">0</h2>
+                <p>Factures enregistrées</p>
+            </div>
+
+        </section>
+
+        <!-- GRAPHIQUES -->
+        <section class="charts-grid">
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Évolution des revenus</h3>
+                    <span>Revenus financiers</span>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Moyens de paiement</h3>
+                    <span>Répartition</span>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="paymentChart"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- TABLEAU DES TRANSACTIONS -->
+        <section class="panel transactions-panel">
+
+            <div class="panel-header">
+                <div>
+                    <h3>Dernières transactions</h3>
+                    <p>Historique des paiements</p>
+                </div>
+
+                <button class="view-all">Voir tout</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Commande</th>
+                            <th>Montant</th>
+                            <th>Mode</th>
+                            <th>Statut</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="transactionsTable">
+                        <tr>
+                            <td colspan="5">Chargement des transactions...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 ShopSphere - Payment & Billing
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- Bibliothèque des graphiques -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JavaScript du dashboard -->
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
