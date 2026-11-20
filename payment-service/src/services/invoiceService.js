@@ -13,11 +13,13 @@ const createInvoice = async (data) => {
 
     // Vérifier le paiement
     const payment = await Payment.findById(data.paymentId);
+if (!payment) {
+    throw new Error('Paiement introuvable');
+}
 
-    if (!payment) {
-        throw new Error('Paiement introuvable');
-    }
-
+if (!['SUCCESS', 'PARTIALLY_REFUNDED', 'REFUNDED'].includes(payment.status)) {
+    throw new Error('Impossible de créer une facture : paiement non validé');
+}
     // Vérifier que le paiement est validé
     if (payment.status !== 'SUCCESS') {
         throw new Error(
